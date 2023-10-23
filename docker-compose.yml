@@ -1,0 +1,13 @@
+version: '3'
+services:
+  minio:
+    image: minio/minio
+    container_name: minio-server
+    volumes:
+      - D:\minio\data:/data
+    ports:
+      - "9000:9000"
+    environment:
+      - "MINIO_ACCESS_KEY=instagram_minio_access_key"
+      - "MINIO_SECRET_KEY=instagram_minio_secret_key"
+    command: server /data
